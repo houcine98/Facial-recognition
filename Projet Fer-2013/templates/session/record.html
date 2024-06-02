@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+  <a class="btn btn-success" style="margin-bottom: 20px; margin-top: 20px; margin-left: 550px;" href="{% url 'session' %}">Star a new session with a new patient</a>
+  <br>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">health</th>
+        <th scope="col">disease</th>
+        <th scope="col">path for the video</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for patient in all_patients %}
+      <tr>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.health }}</td>
+        <td>{{ patient.disease }}</td>
+        <td>{{ patient.video_file }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+
+</body>
+</html>
